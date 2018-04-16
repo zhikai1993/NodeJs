@@ -1,9 +1,10 @@
-const fs = require('fs');
-const _ = require('lodash');
+const fs = require('fs'); //this is for file system operations.
+const _ = require('lodash'); // a useful tool that has useful apis
 const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
+// details defined for constraints for an input
 const titleOptions = {
   describe: 'Title of note',
   demand: true,
@@ -14,6 +15,14 @@ const bodyOptions = {
   demand: true,
   alias: 'b'
 };
+
+// customize input from command lines
+
+/* command lines e.g.:
+  node app.js add --title="some title" --body="some body"
+  node a
+*/
+
 const argv = yargs
   .command('add', 'Add a new note', {
     title: titleOptions,
@@ -28,6 +37,7 @@ const argv = yargs
   })
   .help()
   .argv;
+
 var command = argv._[0];
 
 if (command === 'add') {

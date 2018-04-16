@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+// json files are always string types
+
 var fetchNotes = () => {
   try {
     var notesString = fs.readFileSync('notes-data.json');
@@ -19,6 +21,7 @@ var addNote = (title, body) => {
     title,
     body
   };
+  //filter will go through every object in the array and keep the objects that satisfy the condition
   var duplicateNotes = notes.filter((note) => note.title === title);
 
   if (duplicateNotes.length === 0) {
@@ -53,7 +56,7 @@ var logNote = (note) => {
 };
 
 module.exports = {
-  addNote,
+  addNote, //this is equivalent to "addNote: addNote"
   getAll,
   getNote,
   removeNote,
