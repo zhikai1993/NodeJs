@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Some Website</title>
+  </head>
+  <body>
+    // > refers to that I will grab the 'partial' hbs files in the partials folder,
+    // how does express to know which folder to look up? refer to server.js line 8
+    {{> header}}
+
+    //utilize Handlebars registerHelper
+    // screamIt is the funciton name registered, and welcomeMessage is the first argument
+    // we could pass multiple arguments if the function registered takes multiple arguments
+    // note: this welcomeMessage comes from the object passed in, and this is the property of that object
+    <p>{{screamIt welcomeMessage}}</p>
+
+    {{> footer}}
+  </body>
+</html>
