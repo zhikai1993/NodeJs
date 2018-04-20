@@ -1,0 +1,12 @@
+In package.json:
+
+dependencies can be deployed; devDependency are used locally, usually for test.
+
+for the 'script' section, the we can run those scripts by using the command line:
+  node + {filename}
+  npm test => this will be running test without nodemon
+  npm testwatch => this will be running test with nodemon\
+
+
+In line 8, the environment variable is set by:
+  export NODE_ENV = "test"
